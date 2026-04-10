@@ -183,8 +183,17 @@ export function Navbar() {
                         </a>
                     );
                 })}
-                <button className="bg-[#ed3c6a] text-white text-sm font-bold px-5 py-2.5 rounded-lg mt-2 transition-all   hover:bg-[#d4335f]">
-                    Schedule A Meeting
+                <button className="bg-[#ed3c6a] flex items-center gap-2 text-white text-sm font-bold px-5 py-2.5 rounded-lg mt-2 transition-all   hover:bg-[#d4335f]">
+                    <span> Schedule A Meeting</span>
+                    <svg width="10" height="9" viewBox="0 0 10 9" fill="none">
+                        <path
+                            d="M1 4.5H9M6 1.5L9 4.5L6 7.5"
+                            stroke="white"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                    </svg>
                 </button>
             </div>
         </nav>

@@ -1,13 +1,11 @@
 "use client";
 
- 
 import { ImageWithFallback } from "./ImageWithFallback";
 
 interface TestimonialCardProps {
   name: string;
   review: string;
   avatar: string;
-  highlighted?: boolean;
 }
 
 function StarRating() {
@@ -31,35 +29,25 @@ export function TestimonialCard({
   name,
   review,
   avatar,
-  highlighted = false,
 }: TestimonialCardProps) {
   return (
-    <div
-      className={`rounded-xl p-6 flex flex-col gap-4 overflow-hidden relative transition-all duration-300 hover:-translate-y-1.5 ${
-        highlighted
-          ? "bg-white shadow-xl"
-          : "bg-[#f6f6f6] border border-[#f6f6f6]"
-      }`}
-      style={
-        highlighted
-          ? { boxShadow: "0px 4px 77px rgba(136,136,136,0.41)" }
-          : {}
-      }
-    >
-      <div className="flex items-start gap-4">
+    <div className="rounded-xl p-6 md:p-8 flex flex-col gap-4 overflow-hidden relative transition-all duration-300 bg-[#f6f6f6] hover:bg-white hover:shadow-xl border border-transparent hover:border-[#f0f0f0] h-full">
+      <div className="flex items-center gap-4">
         <ImageWithFallback
           src={avatar}
           alt={name}
           className="rounded-full object-cover flex-shrink-0"
-          width={80}
-          height={80}
+          width={60}
+          height={60}
         />
-        <div className="flex flex-col gap-1 pt-2">
-          <p className="font-bold text-lg text-black">{name}</p>
-          <StarRating />
+          <div className="flex flex-col gap-1">
+            <p className="font-bold text-lg text-black">{name}</p>
+            <p className="text-sm md:text-base text-[#64748b] leading-relaxed">
+              {review}
+            </p>
+            <StarRating />
+          </div>
         </div>
-      </div>
-      <p className="text-sm text-black leading-relaxed">{review}</p>
     </div>
   );
 }

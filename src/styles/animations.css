@@ -70,3 +70,29 @@
 .animate-slide-down {
   animation: slideDown 0.3s ease forwards;
 }
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translateY(0px) rotate(-15deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(-15deg);
+  }
+}
+
+@keyframes floatEllipse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-particle {
+  animation: floatParticle 4s ease-in-out infinite;
+}
+
+.animate-float-ellipse {
+  animation: floatEllipse 3s ease-in-out infinite;
+}

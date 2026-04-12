@@ -2,6 +2,23 @@
 
 import { Button } from "@/components/ui/button";
 
+const particles = [
+    { src: "/assets/hero/particle-1.png", className: "left-[25%] top-[20%] ", delay: "0s" },
+    { src: "/assets/hero/particle-2.png", className: "right-[18%] top-[22%] ", delay: "0.5s" },
+    { src: "/assets/hero/particle-3.png", className: "left-[20%] top-[60%] ", delay: "1s" },
+    { src: "/assets/hero/particle-4.png", className: "right-[25%] top-[62%] ", delay: "1.2s" },
+];
+
+const ellipses = [
+    { src: "/assets/hero/Ellipse 2.svg", className: "left-[50%] top-[15%]", delay: "0.2s" },
+    { src: "/assets/hero/Ellipse 3.svg", className: "right-[6%] top-[18%] ", delay: "0.7s" },
+    { src: "/assets/hero/Ellipse 4.svg", className: "left-[5%] top-[40%]", delay: "1.1s" },
+    { src: "/assets/hero/Ellipse 5.svg", className: "right-[10%] top-[38%]", delay: "0.4s" },
+    { src: "/assets/hero/Ellipse 6.svg", className: "left-[15%] top-[72%] ", delay: "1.3s" },
+    { src: "/assets/hero/Ellipse 7.svg", className: "right-[50%] top-[75%]", delay: "0.9s" },
+    { src: "/assets/hero/Ellipse 8.svg", className: "left-[20%] top-[85%]", delay: "0.6s" },
+];
+
 export function Hero() {
     return (
         <section
@@ -12,54 +29,25 @@ export function Hero() {
                 backgroundSize: "88px 83px",
             }}
         >
-            <div
-                className="absolute left-[6%] top-[24%] w-20 h-20 rounded-xl bg-[#ff5a5f] hidden lg:block"
-                style={
-                    {
-                        transform: "rotate(-30deg)",
-                        boxShadow: "inset 0px -2px 6px rgba(0,0,0,0.25)",
-                        animation: "floatAnim 4s ease-in-out infinite",
-                        animationDelay: "0s",
-                        "--rot": "-30deg",
-                    } as React.CSSProperties
-                }
-            />
-            <div
-                className="absolute right-[16%] top-[30%] w-16 h-16 rounded-xl bg-[#34e0a1] hidden lg:block"
-                style={
-                    {
-                        transform: "rotate(41deg)",
-                        boxShadow: "inset 0px -2px 6px rgba(0,0,0,0.25)",
-                        animation: "floatAnim 5s ease-in-out infinite",
-                        animationDelay: "0.5s",
-                        "--rot": "41deg",
-                    } as React.CSSProperties
-                }
-            />
-            <div
-                className="absolute left-[14%] top-[64%] w-[58px] h-[58px] rounded-xl bg-[#0e214b] hidden lg:block"
-                style={
-                    {
-                        transform: "rotate(-23deg)",
-                        boxShadow: "inset 0px -2px 6px rgba(0,0,0,0.25)",
-                        animation: "float2Anim 4.5s ease-in-out infinite",
-                        animationDelay: "1s",
-                        "--rot": "-23deg",
-                    } as React.CSSProperties
-                }
-            />
-            <div
-                className="absolute right-[7%] top-[58%] w-16 h-16 rounded-xl bg-[#0c3b7c] hidden lg:block"
-                style={
-                    {
-                        transform: "rotate(28deg)",
-                        boxShadow: "inset 0px -2px 6px rgba(0,0,0,0.25)",
-                        animation: "floatAnim 3.8s ease-in-out infinite",
-                        animationDelay: "1.2s",
-                        "--rot": "28deg",
-                    } as React.CSSProperties
-                }
-            />
+            {particles.map((particle, i) => (
+                <img
+                    key={`particle-${i}`}
+                    src={particle.src}
+                    alt=""
+                    className={`absolute hidden lg:block animate-float-particle ${particle.className}`}
+                    style={{ animationDelay: particle.delay }}
+                />
+            ))}
+
+            {ellipses.map((ellipse, i) => (
+                <img
+                    key={`ellipse-${i}`}
+                    src={ellipse.src}
+                    alt=""
+                    className={`absolute hidden lg:block animate-float-ellipse ${ellipse.className}`}
+                    style={{ animationDelay: ellipse.delay }}
+                />
+            ))}
 
             <div className="relative z-10 max-w-3xl mx-auto px-6 text-center flex flex-col items-center gap-6">
                 <div className="fade-slide-up" style={{ animationDelay: "0s" }}>

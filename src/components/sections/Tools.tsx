@@ -41,7 +41,8 @@ export function Tools() {
                 className="flex items-center justify-center w-[350px] h-[100px] gap-2 bg-white border border-gray-100 rounded-xl p-5 shadow-sm cursor-pointer transition-all duration-250 hover:-translate-y-1 hover:shadow-lg"
                 style={{ boxShadow: "0 1px 3px rgba(0,0,0,0.08)" }}
               >
-                {<img src={tool.image} alt="Tool" className="object-contain" />}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={tool.image} alt="Tool" className="object-contain" />
               </div>
             </AnimateIn>
           ))}

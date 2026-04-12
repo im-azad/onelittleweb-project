@@ -15,8 +15,8 @@ const ellipses = [
     { src: "/assets/hero/Ellipse 4.svg", className: "left-[5%] top-[40%]", delay: "1.1s" },
     { src: "/assets/hero/Ellipse 5.svg", className: "right-[10%] top-[38%]", delay: "0.4s" },
     { src: "/assets/hero/Ellipse 6.svg", className: "left-[15%] top-[72%] ", delay: "1.3s" },
-    { src: "/assets/hero/Ellipse 7.svg", className: "right-[50%] top-[75%]", delay: "0.9s" },
-    { src: "/assets/hero/Ellipse 8.svg", className: "left-[20%] top-[85%]", delay: "0.6s" },
+    { src: "/assets/hero/Ellipse 7.svg", className: "right-[50%] top-[85%]", delay: "0.9s" },
+    { src: "/assets/hero/Ellipse 8.svg", className: "left-[20%] top-[80%]", delay: "0.6s" },
 ];
 
 export function Hero() {
@@ -30,6 +30,7 @@ export function Hero() {
             }}
         >
             {particles.map((particle, i) => (
+                /* eslint-disable-next-line @next/next/no-img-element */
                 <img
                     key={`particle-${i}`}
                     src={particle.src}
@@ -40,6 +41,7 @@ export function Hero() {
             ))}
 
             {ellipses.map((ellipse, i) => (
+                /* eslint-disable-next-line @next/next/no-img-element */
                 <img
                     key={`ellipse-${i}`}
                     src={ellipse.src}
@@ -81,12 +83,12 @@ export function Hero() {
                 </div>
 
                 <div
-                    className="flex flex-wrap gap-3 justify-center fade-slide-up"
+                    className="flex flex-wrap gap-3 justify-center fade-slide-up mb-3 mt-3"
                     style={{ animationDelay: "0.3s" }}
                 >
                     <Button
                         size="lg"
-                        className="gap-2 flex items-center"
+                        className="gap-2 flex items-center cursor-pointer"
                         style={{
                             boxShadow: "0 4px 24px rgba(237,60,106,0.35)",
                         }}
@@ -107,7 +109,7 @@ export function Hero() {
                             />
                         </svg>
                     </Button>
-                    <Button variant="outline" size="lg">
+                    <Button variant="outline" size="lg" className="cursor-pointer">
                         Watch Demo
                     </Button>
                 </div>
@@ -117,13 +119,8 @@ export function Hero() {
                     style={{ animationDelay: "0.45s" }}
                 >
                     <div className="flex -space-x-2">
-                        {["#fac4d2", "#c7b9da", "#b9d9da"].map((bg, i) => (
-                            <div
-                                key={i}
-                                className="w-8 h-8 rounded-full border-2 border-white"
-                                style={{ backgroundColor: bg }}
-                            />
-                        ))}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src="/assets/Avatar-group.png" alt="User Avatars" />
                     </div>
                     <p className="text-sm text-[#64748b]">
                         <span className="font-bold text-[#191d23]">2,000+</span>{" "}

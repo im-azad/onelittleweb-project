@@ -19,10 +19,12 @@ export function AnimateIn({
 }: AnimateInProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const isVisibleRef = useRef(false);
 
   const handleIntersect = useCallback((entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && !isVisibleRef.current) {
+        isVisibleRef.current = true;
         setVisible(true);
         observer.unobserve(entry.target);
       }
@@ -33,9 +35,16 @@ export function AnimateIn({
     const el = ref.current;
     if (!el) return;
 
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight * 0.95) {
-      setVisible(true);
+    if (isVisibleRef.current) return;
+
+    const checkVisibility = () => {
+      const rect = el.getBoundingClientRect();
+      return rect.top < window.innerHeight * 0.95;
+    };
+
+    if (checkVisibility()) {
+      isVisibleRef.current = true;
+      queueMicrotask(() => setVisible(true));
       return;
     }
 

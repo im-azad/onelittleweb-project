@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 const imgLogo = "/logo.png";
 
@@ -74,6 +74,7 @@ export function Navbar() {
                             window.scrollTo({ top: 0, behavior: "smooth" });
                         }}
                     >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={imgLogo} alt="Logo" className="w-auto" />
                     </a>
 

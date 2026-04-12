@@ -1,23 +1,14 @@
 "use client";
 
- 
-
 interface CheckIconProps {
   active?: boolean;
-  size?: number;
 }
 
-const cricleCheckIcon   = "/assets/circle-check.svg";
-const cricleCorssIcon   = "/assets/circle-corss.svg";
-
-export function CheckIcon({ active = true, size = 16 }: CheckIconProps) {
+export function CheckIcon({ active = true }: CheckIconProps) {
   if (!active) {
-    return (
-      <img src={cricleCorssIcon} alt="" />
-    );
+    /* eslint-disable-next-line @next/next/no-img-element */
+    return <img src="/assets/circle-corss.svg" alt="" />;
   }
-  return (
-    <img src={cricleCheckIcon} alt="" />
-
-  );
+  /* eslint-disable-next-line @next/next/no-img-element */
+  return <img src="/assets/circle-check.svg" alt="" />;
 }

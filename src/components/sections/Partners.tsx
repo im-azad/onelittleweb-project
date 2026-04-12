@@ -29,6 +29,7 @@ export function Partners() {
                     }}
                 >
                     {[...logos, ...logos, ...logos].map((logo, i) => (
+                        /* eslint-disable-next-line @next/next/no-img-element */
                         <img
                             key={i}
                             src={logo.logo}

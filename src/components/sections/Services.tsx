@@ -12,21 +12,27 @@ const imgImage15 = "/assets/service/5.png";
 const imgImage1 = "/assets/service/6.png";
 
 function PropertyIcon() {
+  /* eslint-disable-next-line @next/next/no-img-element */
   return <img src={imgImage11} alt="Property Listings" className=" object-contain" />;
 }
 function GuestIcon() {
+  /* eslint-disable-next-line @next/next/no-img-element */
   return <img src={imgImage12} alt="Guest Booking" className=" object-contain" />;
 }
 function CleaningIcon() {
+  /* eslint-disable-next-line @next/next/no-img-element */
   return <img src={imgImage13} alt="House Cleaning" className=" object-contain" />;
 }
 function AdvisorIcon() {
+  /* eslint-disable-next-line @next/next/no-img-element */
   return <img src={imgImage14} alt="Airbnb Advisor" className=" object-contain" />;
 }
 function ReportIcon() {
+  /* eslint-disable-next-line @next/next/no-img-element */
   return <img src={imgImage15} alt="Track & Report" className=" object-contain" />;
 }
 function FeedbackIcon() {
+  /* eslint-disable-next-line @next/next/no-img-element */
   return <img src={imgImage1} alt="Guest Feedback" className=" object-contain" />;
 }
 

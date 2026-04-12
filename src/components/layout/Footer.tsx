@@ -67,6 +67,7 @@ export function Footer() {
           <div className="flex gap-10">
             <div className="w-2/5 flex flex-col gap-6">
             <a href="#home" className="flex items-center gap-2 flex-shrink-0 hover:cursor-pointer" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});}}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={imgLogo} alt="Logo" className="w-auto" />
             </a>
               <p className="text-[#52525b] text-sm leading-relaxed mr-10">

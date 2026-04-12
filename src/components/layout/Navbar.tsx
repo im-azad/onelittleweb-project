@@ -60,12 +60,12 @@ export function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+            className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
                 scrolled ? "bg-white/95 backdrop-blur-sm shadow-sm" : "bg-white"
             }`}
         >
             <div className="w-full shadow-[0_4px_62px_0_rgba(250,196,210,0.63)]">
-                <div className="max-w-[1280px] mx-auto px-6 lg:px-8 flex items-center justify-between h-22">
+                <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-22">
                     <a
                         href="#home"
                         className="flex items-center gap-2 flex-shrink-0 hover:cursor-pointer"
@@ -159,7 +159,7 @@ export function Navbar() {
             </div>
 
             <div
-                className={`md:hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 shadow-lg transition-all duration-300 ${
+                className={`md:hidden absolute left-0 right-0 top-full bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 shadow-lg transition-all duration-300 ${
                     menuOpen
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 -translate-y-2 pointer-events-none"

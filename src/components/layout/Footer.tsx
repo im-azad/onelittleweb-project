@@ -63,14 +63,14 @@ export function Footer() {
   return (
     <footer>
       <div className="bg-white border-t border-[#d6d6d6]">
-        <div className="max-w-[1280px] mx-auto px-6 lg:px-8 py-14">
-          <div className="flex gap-10">
-            <div className="w-2/5 flex flex-col gap-6">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-14">
+          <div className="flex flex-col lg:flex-row gap-10">
+            <div className="w-full lg:w-2/5 flex flex-col gap-6">
             <a href="#home" className="flex items-center gap-2 flex-shrink-0 hover:cursor-pointer" onClick={(e) => {e.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});}}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={imgLogo} alt="Logo" className="w-auto" />
+              <img src={imgLogo} alt="Logo" className="w-32 lg:w-auto" />
             </a>
-              <p className="text-[#52525b] text-sm leading-relaxed mr-10">
+              <p className="text-[#52525b] text-sm leading-relaxed lg:mr-10">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.
               </p>
               <div className="flex items-center gap-6 mt-3">
@@ -87,8 +87,9 @@ export function Footer() {
               </div>
             </div>
 
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-8 lg:gap-0">
             {columns.map((col) => (
-              <div key={col.title} className="w-1/6 flex flex-col mx-8 gap-4">
+              <div key={col.title} className="w-1/2 sm:w-auto sm:flex-1 lg:w-1/6 flex flex-col mx-0 lg:mx-8 gap-4">
                 <h4 className="font-bold text-[16px] text-[#18181b]">{col.title}</h4>
                 <div className="flex flex-col gap-1">
                   {col.links.map((link) => (
@@ -103,6 +104,7 @@ export function Footer() {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </div>

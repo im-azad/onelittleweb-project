@@ -4,30 +4,30 @@
 import { AnimateIn } from "./AnimateIn";
 import { ServiceCard } from "./ServiceCard";
 
-const imgImage11 = "/assets/property-listings.png";
-const imgImage12 = "/assets/guest-booking.png";
-const imgImage13 = "/assets/house-cleaning.png";
-const imgImage14 = "/assets/airbnb-advisor.png";
-const imgImage15 = "/assets/track-report.png";
-const imgImage1 = "/assets/guest-feedback.png";
+const imgImage11 = "/assets/service/1.png";
+const imgImage12 = "/assets/service/2.png";
+const imgImage13 = "/assets/service/3.png";
+const imgImage14 = "/assets/service/4.png";
+const imgImage15 = "/assets/service/5.png";
+const imgImage1 = "/assets/service/6.png";
 
 function PropertyIcon() {
-  return <img src={imgImage11} alt="Property Listings" className="w-8 h-8 object-contain" />;
+  return <img src={imgImage11} alt="Property Listings" className=" object-contain" />;
 }
 function GuestIcon() {
-  return <img src={imgImage12} alt="Guest Booking" className="w-8 h-8 object-contain" />;
+  return <img src={imgImage12} alt="Guest Booking" className=" object-contain" />;
 }
 function CleaningIcon() {
-  return <img src={imgImage13} alt="House Cleaning" className="w-8 h-8 object-contain" />;
+  return <img src={imgImage13} alt="House Cleaning" className=" object-contain" />;
 }
 function AdvisorIcon() {
-  return <img src={imgImage14} alt="Airbnb Advisor" className="w-8 h-8 object-contain" />;
+  return <img src={imgImage14} alt="Airbnb Advisor" className=" object-contain" />;
 }
 function ReportIcon() {
-  return <img src={imgImage15} alt="Track & Report" className="w-8 h-8 object-contain" />;
+  return <img src={imgImage15} alt="Track & Report" className=" object-contain" />;
 }
 function FeedbackIcon() {
-  return <img src={imgImage1} alt="Guest Feedback" className="w-8 h-8 object-contain" />;
+  return <img src={imgImage1} alt="Guest Feedback" className=" object-contain" />;
 }
 
 const services = [
